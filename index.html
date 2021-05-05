@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+  <title>Frontend Mentor | IP Address Tracker</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    .wrapper{
+      width:100%;
+      min-height:100vh;
+    }
+    .upper-bg{
+      background-image: url(./images/pattern-bg.png);
+      min-height:20rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: center;
+    }
+    .title-wrapper h3{
+      color: #fff;
+      font-size: 2.5rem;
+    }
+    .input-wrapper{
+      height: 3rem;
+
+    }
+    .input-wrapper input{
+      width: 30rem;
+      height: 3rem;
+      outline: 0;
+      padding:1rem; 
+    }
+    .input-wrapper button{
+      border: 0;
+      outline: 0;
+      width:3rem;
+      height: 3rem;
+      background-color: #000;
+      margin-left: -6px;
+      cursor: pointer;
+    }
+    .input-wrapper .fas{
+      color: #fff;
+    }
+    .card{
+      position: absolute;
+      z-index:999;
+      top: 20rem;
+      /* top: */
+      left:50%;
+      transform: translate(-50%,-50%);
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 5px;
+    }
+    .card-wrapper{
+      display: flex;
+    }
+    .info-section{
+      width:300px;
+      min-height:70px;
+      border-right: 1px solid #ccc;
+      text-align: left;
+      padding: 2rem;
+    }
+    .info-section:last-child{
+      border: none;
+    }
+    .info-section h2{
+      min-width:54px;
+    }
+    
+    #map{
+      width:100%;
+      height: 60vh;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- <h1></h1> -->
+  <div class="wrapper">
+    <div class="upper-bg">
+      <div class="title-wrapper">
+        <h3>IP Address Tracker</h3>
+        <div class="input-wrapper">
+        <input type="text" placeholder="Search for any IP address or domain">
+          <button type="button">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-wrapper">
+        <div class="info-section">
+          <small>IP Address</small>
+          <h2 id="ip">8.8.8.8</h2>
+        </div>
+        <div class="info-section">
+          <small>Location</small>
+          <h2 id="location">US</h2>
+        </div>
+        <div class="info-section">
+          <small>Timezone</small>
+          <h2 id="timeZone">UTC -07:00</h2>
+        </div>
+        <div class="info-section">
+          <small>ISP</small>
+          <h2 id="isp">Google LLC</h2>
+        </div>
+      </div>
+    </div>
+    <div class="map" id="map"></div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+  
+     
+  
+  
+  <script src="./js/all.js"></script>
+</body>
+</html>
